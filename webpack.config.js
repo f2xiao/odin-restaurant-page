@@ -13,8 +13,22 @@ module.exports = {
  },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Development',
-    }),
+      title:`Mei's`,
+      inject: false,
+      templateContent: ({ htmlWebpackPlugin }) => `
+      <!DOCTYPE html>
+        <html>
+          <head>
+            ${htmlWebpackPlugin.tags.headTags}
+            <title>${htmlWebpackPlugin.options.title}</title>
+          </head>
+          <body>
+            <div id="content"></div>
+            ${htmlWebpackPlugin.tags.bodyTags}
+          </body>
+        </html>
+      `
+    })
   ],
   output: {
     filename: '[name].bundle.js',
