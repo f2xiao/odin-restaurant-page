@@ -1,3 +1,8 @@
-import page from './page';
+import ScreenController from "./ScreenController";
 
-console.log(page)
+ScreenController();
+
+const homeButton = document.querySelectorAll("nav button")[0];
+
+homeButton.click();
+
