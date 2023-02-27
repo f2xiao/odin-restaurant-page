@@ -1,6 +1,5 @@
 import Tab from "./Tab"
 export default function () {
-	const number = 3;
 	let tabs = [];
 
 	const data = [
@@ -60,7 +59,7 @@ export default function () {
 		}
 	]
 	
-	for (let index = 0; index < number; index++) {
+	for (let index = 0; index < data.length; index++) {
 		const { title, content, subs } = data[index];
 		tabs.push(Tab(title, content, subs))
 	}

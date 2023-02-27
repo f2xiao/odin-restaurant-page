@@ -50,6 +50,11 @@ export default function () {
   }
   navDiv.addEventListener("click", clickHandlerTab);
 
+  // tab init
+  const homeButton = document.querySelectorAll("nav button")[0];
+
+  homeButton.click();
+
 }
 
 
