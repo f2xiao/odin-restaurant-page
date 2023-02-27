@@ -1,9 +1,11 @@
-export default function (title = "title", content = "content", subs=[]) {
- let template = `<h1>${title}</h1><ul>`;
-  const generateList = (subs) => subs?.map(({subtitle, subcontent})=>`<li><h2>${subtitle}</h2><p>${subcontent}</p></li>`).join("");
-  template += generateList(subs);
-  template += `</ul>`;
+import ListWrapper from "./ListWrapper";
 
+export default function (title = "title", content = []) {
+  let h1Html = `<h1>${title}</h1>`;
+
+  const generateList = ListWrapper(content).getTemplate();
+  let template = `<div>${h1Html}${generateList}</div>`;
+ 
   const getName = () => title;
   const getTemplate = () => template;
   const setTemplate = (html) => template = html;
